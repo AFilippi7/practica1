@@ -1,0 +1,307 @@
+agustin@agustin-VirtualBox:~$ mkdir practicoGit
+agustin@agustin-VirtualBox:~$ cd practicoGit/
+agustin@agustin-VirtualBox:~/practicoGit$ git add .
+fatal: no es un repositorio git (ni ninguno de los directorios superiores): .git
+agustin@agustin-VirtualBox:~/practicoGit$ git init
+ayuda: Usando 'master' como el nombre de la rama inicial. Este nombre de rama predeterminado
+ayuda: está sujeto a cambios. Para configurar el nombre de la rama inicial para usar en todos
+ayuda: de sus nuevos repositorios, reprimiendo esta advertencia, llama a:
+ayuda: 
+ayuda: 	git config --global init.defaultBranch <nombre>
+ayuda: 
+ayuda: Los nombres comúnmente elegidos en lugar de 'master' son 'main', 'trunk' y
+ayuda: 'development'. Se puede cambiar el nombre de la rama recién creada mediante este comando:
+ayuda: 
+ayuda: 	git branch -m <nombre>
+Inicializado repositorio Git vacío en /home/agustin/practicoGit/.git/
+agustin@agustin-VirtualBox:~/practicoGit$ git status
+En la rama master
+
+No hay commits todavía
+
+no hay nada para confirmar (crea/copia archivos y usa "git add" para hacerles seguimiento)
+agustin@agustin-VirtualBox:~/practicoGit$ touch info.txt
+agustin@agustin-VirtualBox:~/practicoGit$ nano info.txt 
+agustin@agustin-VirtualBox:~/practicoGit$ mkdir historia/ 
+agustin@agustin-VirtualBox:~/practicoGit$ mkdir trabajo/ 
+agustin@agustin-VirtualBox:~/practicoGit$ mkdir extras/
+agustin@agustin-VirtualBox:~/practicoGit$ cd historia/
+agustin@agustin-VirtualBox:~/practicoGit/historia$ touch historia.txt
+agustin@agustin-VirtualBox:~/practicoGit/historia$ ls
+historia.txt
+agustin@agustin-VirtualBox:~/practicoGit/historia$ cd ..
+agustin@agustin-VirtualBox:~/practicoGit$ cd trabajo/
+agustin@agustin-VirtualBox:~/practicoGit/trabajo$ touch trabajo.txt
+agustin@agustin-VirtualBox:~/practicoGit/trabajo$ ls
+trabajo.txt
+agustin@agustin-VirtualBox:~/practicoGit/trabajo$ cd ..
+agustin@agustin-VirtualBox:~/practicoGit$ cd extras/
+agustin@agustin-VirtualBox:~/practicoGit/extras$ touch extras.txt
+agustin@agustin-VirtualBox:~/practicoGit/extras$ ls
+extras.txt
+agustin@agustin-VirtualBox:~/practicoGit/extras$ nano extras.txt 
+agustin@agustin-VirtualBox:~/practicoGit/extras$ cd ..
+agustin@agustin-VirtualBox:~/practicoGit$ cd trabajo/
+agustin@agustin-VirtualBox:~/practicoGit/trabajo$ nano trabajo.txt 
+agustin@agustin-VirtualBox:~/practicoGit/trabajo$ cd ..
+agustin@agustin-VirtualBox:~/practicoGit$ cd historia/
+agustin@agustin-VirtualBox:~/practicoGit/historia$ nano historia.txt 
+agustin@agustin-VirtualBox:~/practicoGit/historia$ cd ..
+agustin@agustin-VirtualBox:~/practicoGit$ git status
+En la rama master
+
+No hay commits todavía
+
+Archivos sin seguimiento:
+  (usa "git add <archivo>..." para incluirlo a lo que será confirmado)
+	extras/
+	historia/
+	info.txt
+	trabajo/
+
+no hay nada agregado al commit pero hay archivos sin seguimiento presentes (usa "git add" para hacerles seguimiento)
+agustin@agustin-VirtualBox:~/practicoGit$ ls
+extras  historia  info.txt  trabajo
+agustin@agustin-VirtualBox:~/practicoGit$ git commit -m "Resultados de primer commit"
+En la rama master
+
+Confirmación inicial
+
+Archivos sin seguimiento:
+  (usa "git add <archivo>..." para incluirlo a lo que será confirmado)
+	extras/
+	historia/
+	info.txt
+	trabajo/
+
+no hay nada agregado al commit pero hay archivos sin seguimiento presentes (usa "git add" para hacerles seguimiento)
+agustin@agustin-VirtualBox:~/practicoGit$ git add .
+agustin@agustin-VirtualBox:~/practicoGit$ git commit -m "Resultados de primer commit"
+[master (commit-raíz) 07ac110] Resultados de primer commit
+ 4 files changed, 6 insertions(+)
+ create mode 100644 extras/extras.txt
+ create mode 100644 historia/historia.txt
+ create mode 100644 info.txt
+ create mode 100644 trabajo/trabajo.txt
+agustin@agustin-VirtualBox:~/practicoGit$ git status
+En la rama master
+nada para hacer commit, el árbol de trabajo está limpio
+agustin@agustin-VirtualBox:~/practicoGit$ nano info.txt 
+agustin@agustin-VirtualBox:~/practicoGit$ git status
+En la rama master
+Cambios no rastreados para el commit:
+  (usa "git add <archivo>..." para actualizar lo que será confirmado)
+  (usa "git restore <archivo>..." para descartar los cambios en el directorio de trabajo)
+	modificados:     info.txt
+
+sin cambios agregados al commit (usa "git add" y/o "git commit -a")
+agustin@agustin-VirtualBox:~/practicoGit$ git commit -m "Commit con cambio de archivo info"
+En la rama master
+Cambios no rastreados para el commit:
+  (usa "git add <archivo>..." para actualizar lo que será confirmado)
+  (usa "git restore <archivo>..." para descartar los cambios en el directorio de trabajo)
+	modificados:     info.txt
+
+sin cambios agregados al commit (usa "git add" y/o "git commit -a")
+agustin@agustin-VirtualBox:~/practicoGit$ git add .
+agustin@agustin-VirtualBox:~/practicoGit$ git commit -m "Commit con cambio de archivo info"
+[master 7f69ca8] Commit con cambio de archivo info
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+agustin@agustin-VirtualBox:~/practicoGit$ git log
+commit 7f69ca8cbbf526fd017fc2a6f8103a351aa81a4a (HEAD -> master)
+Author: AFilippi7 <2560190@ucc.edu.ar>
+Date:   Thu Apr 2 08:37:13 2026 -0300
+
+    Commit con cambio de archivo info
+
+commit 07ac1103b55d4f560d7dbcb0948a1d96050dab27
+Author: AFilippi7 <2560190@ucc.edu.ar>
+Date:   Thu Apr 2 08:32:56 2026 -0300
+
+    Resultados de primer commit
+agustin@agustin-VirtualBox:~/practicoGit$ git remote add origin https://github.com/AFilippi7/practica1.git
+agustin@agustin-VirtualBox:~/practicoGit$ git branch -M main
+agustin@agustin-VirtualBox:~/practicoGit$ git push -u origin main
+Username for 'https://github.com': AFilippi7
+Password for 'https://AFilippi7@github.com': 
+Enumerando objetos: 12, listo.
+Contando objetos: 100% (12/12), listo.
+Compresión delta usando hasta 4 hilos
+Comprimiendo objetos: 100% (5/5), listo.
+Escribiendo objetos: 100% (12/12), 965 bytes | 241.00 KiB/s, listo.
+Total 12 (delta 0), reusados 0 (delta 0), pack-reusados 0
+To https://github.com/AFilippi7/practica1.git
+ * [new branch]      main -> main
+rama 'main' configurada para rastrear 'origin/main'.
+agustin@agustin-VirtualBox:~/practicoGit$ git status
+En la rama main
+Tu rama está actualizada con 'origin/main'.
+
+nada para hacer commit, el árbol de trabajo está limpio
+agustin@agustin-VirtualBox:~/practicoGit$ git push
+Username for 'https://github.com': AFilippi7
+Password for 'https://AFilippi7@github.com': 
+Everything up-to-date
+agustin@agustin-VirtualBox:~/practicoGit$ git push -u origin main
+Username for 'https://github.com': AFilippi7
+Password for 'https://AFilippi7@github.com': 
+rama 'main' configurada para rastrear 'origin/main'.
+Everything up-to-date
+agustin@agustin-VirtualBox:~/practicoGit$ git clone https://github.com/eldelima/practica.git
+Clonando en 'practica'...
+remote: Enumerating objects: 39, done.
+remote: Counting objects: 100% (39/39), done.
+remote: Compressing objects: 100% (21/21), done.
+remote: Total 39 (delta 9), reused 22 (delta 5), pack-reused 0 (from 0)
+Recibiendo objetos: 100% (39/39), 5.07 KiB | 5.07 MiB/s, listo.
+Resolviendo deltas: 100% (9/9), listo.
+agustin@agustin-VirtualBox:~/practicoGit$ ls
+extras  historia  info.txt  practica  trabajo
+agustin@agustin-VirtualBox:~/practicoGit$ cd practica
+agustin@agustin-VirtualBox:~/practicoGit/practica$ ls
+histoia3.txt   historia3.txt  historia.txt  README.md
+historia2.txt  historia.html  lose          version1
+agustin@agustin-VirtualBox:~/practicoGit/practica$ cd ..
+agustin@agustin-VirtualBox:~/practicoGit$ git push
+Username for 'https://github.com': AFilippi7
+Password for 'https://AFilippi7@github.com': 
+remote: Invalid username or token. Password authentication is not supported for Git operations.
+fatal: Autenticación falló para 'https://github.com/AFilippi7/practica1.git/'
+agustin@agustin-VirtualBox:~/practicoGit$ git push
+Username for 'https://github.com': AFilippi7
+Password for 'https://AFilippi7@github.com': 
+Everything up-to-date
+agustin@agustin-VirtualBox:~/practicoGit$ ls
+extras  historia  info.txt  practica  trabajo
+agustin@agustin-VirtualBox:~/practicoGit$ git add .
+warning: agregando repositorio de git embebido: practica
+ayuda: You've added another git repository inside your current repository.
+ayuda: Clones of the outer repository will not contain the contents of
+ayuda: the embedded repository and will not know how to obtain it.
+ayuda: If you meant to add a submodule, use:
+ayuda: 
+ayuda: 	git submodule add <url> practica
+ayuda: 
+ayuda: If you added this path by mistake, you can remove it from the
+ayuda: index with:
+ayuda: 
+ayuda: 	git rm --cached practica
+ayuda: 
+ayuda: See "git help submodule" for more information.
+agustin@agustin-VirtualBox:~/practicoGit$ git status
+En la rama main
+Tu rama está actualizada con 'origin/main'.
+
+Cambios a ser confirmados:
+  (usa "git restore --staged <archivo>..." para sacar del área de stage)
+	nuevos archivos: practica
+
+agustin@agustin-VirtualBox:~/practicoGit$ git commit -m "Tercer commit agrego repo clonado"
+[main 6b57ae8] Tercer commit agrego repo clonado
+ 1 file changed, 1 insertion(+)
+ create mode 160000 practica
+agustin@agustin-VirtualBox:~/practicoGit$ git push
+Username for 'https://github.com': AFilippi7
+Password for 'https://AFilippi7@github.com': 
+Enumerando objetos: 3, listo.
+Contando objetos: 100% (3/3), listo.
+Compresión delta usando hasta 4 hilos
+Comprimiendo objetos: 100% (2/2), listo.
+Escribiendo objetos: 100% (2/2), 273 bytes | 136.00 KiB/s, listo.
+Total 2 (delta 1), reusados 0 (delta 0), pack-reusados 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/AFilippi7/practica1.git
+   7f69ca8..6b57ae8  main -> main
+agustin@agustin-VirtualBox:~/practicoGit$ git branch Version1
+agustin@agustin-VirtualBox:~/practicoGit$ git checkout
+Tu rama está actualizada con 'origin/main'.
+agustin@agustin-VirtualBox:~/practicoGit$ git checkout Version1
+Cambiado a rama 'Version1'
+agustin@agustin-VirtualBox:~/practicoGit$ git checkout
+agustin@agustin-VirtualBox:~/practicoGit$ git branch
+* Version1
+  main
+agustin@agustin-VirtualBox:~/practicoGit$ mkdir prueba1
+agustin@agustin-VirtualBox:~/practicoGit$ mkdir prueba2
+agustin@agustin-VirtualBox:~/practicoGit$ cd pr
+practica/ prueba1/  prueba2/  
+agustin@agustin-VirtualBox:~/practicoGit$ cd prueba1
+agustin@agustin-VirtualBox:~/practicoGit/prueba1$ touch prueba1.txt
+agustin@agustin-VirtualBox:~/practicoGit/prueba1$ nano prueba1.txt 
+agustin@agustin-VirtualBox:~/practicoGit/prueba1$ cd ..
+agustin@agustin-VirtualBox:~/practicoGit$ cd prueba2
+agustin@agustin-VirtualBox:~/practicoGit/prueba2$ touch prueba2.txt
+agustin@agustin-VirtualBox:~/practicoGit/prueba2$ nano prueba2.txt 
+agustin@agustin-VirtualBox:~/practicoGit/prueba2$ cd ..
+agustin@agustin-VirtualBox:~/practicoGit$ git status
+En la rama Version1
+Archivos sin seguimiento:
+  (usa "git add <archivo>..." para incluirlo a lo que será confirmado)
+	prueba1/
+	prueba2/
+
+no hay nada agregado al commit pero hay archivos sin seguimiento presentes (usa "git add" para hacerles seguimiento)
+agustin@agustin-VirtualBox:~/practicoGit$ git add .
+agustin@agustin-VirtualBox:~/practicoGit$ git commit -m "Nueva branch"
+[Version1 2bf562f] Nueva branch
+ 2 files changed, 3 insertions(+)
+ create mode 100644 prueba1/prueba1.txt
+ create mode 100644 prueba2/prueba2.txt
+agustin@agustin-VirtualBox:~/practicoGit$ git push -u origin Version1 
+Username for 'https://github.com': AFilippi7
+Password for 'https://AFilippi7@github.com': 
+Enumerando objetos: 7, listo.
+Contando objetos: 100% (7/7), listo.
+Compresión delta usando hasta 4 hilos
+Comprimiendo objetos: 100% (2/2), listo.
+Escribiendo objetos: 100% (6/6), 444 bytes | 148.00 KiB/s, listo.
+Total 6 (delta 1), reusados 0 (delta 0), pack-reusados 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote: 
+remote: Create a pull request for 'Version1' on GitHub by visiting:
+remote:      https://github.com/AFilippi7/practica1/pull/new/Version1
+remote: 
+To https://github.com/AFilippi7/practica1.git
+ * [new branch]      Version1 -> Version1
+rama 'Version1' configurada para rastrear 'origin/Version1'.
+agustin@agustin-VirtualBox:~/practicoGit$ git merge
+Ya está actualizado.
+agustin@agustin-VirtualBox:~/practicoGit$ git merge main
+Ya está actualizado.
+agustin@agustin-VirtualBox:~/practicoGit$ git checkout
+Tu rama está actualizada con 'origin/Version1'.
+agustin@agustin-VirtualBox:~/practicoGit$ git branch
+* Version1
+  main
+agustin@agustin-VirtualBox:~/practicoGit$ git merge main
+Ya está actualizado.
+agustin@agustin-VirtualBox:~/practicoGit$ git checkout main
+Cambiado a rama 'main'
+Tu rama está actualizada con 'origin/main'.
+agustin@agustin-VirtualBox:~/practicoGit$ ls
+extras  historia  info.txt  practica  trabajo
+agustin@agustin-VirtualBox:~/practicoGit$ git checkout Version1 
+Cambiado a rama 'Version1'
+Tu rama está actualizada con 'origin/Version1'.
+agustin@agustin-VirtualBox:~/practicoGit$ ls
+extras  historia  info.txt  practica  prueba1  prueba2  trabajo
+agustin@agustin-VirtualBox:~/practicoGit$ git checkout main
+Cambiado a rama 'main'
+Tu rama está actualizada con 'origin/main'.
+agustin@agustin-VirtualBox:~/practicoGit$ git merge Version1 
+Actualizando 6b57ae8..2bf562f
+Fast-forward
+ prueba1/prueba1.txt | 1 +
+ prueba2/prueba2.txt | 2 ++
+ 2 files changed, 3 insertions(+)
+ create mode 100644 prueba1/prueba1.txt
+ create mode 100644 prueba2/prueba2.txt
+agustin@agustin-VirtualBox:~/practicoGit$ ls
+extras  historia  info.txt  practica  prueba1  prueba2  trabajo
+agustin@agustin-VirtualBox:~/practicoGit$ git branch -D Version1 
+Eliminada la rama Version1 (era 2bf562f).
+agustin@agustin-VirtualBox:~/practicoGit$ git branch
+* main
+agustin@agustin-VirtualBox:~/practicoGit$ ls
+extras  historia  info.txt  practica  prueba1  prueba2  trabajo
+agustin@agustin-VirtualBox:~/practicoGit$ 
